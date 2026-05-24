@@ -19,7 +19,7 @@ const JWT_SECRET = process.env.JWT_SECRET || "default-secret";
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
   // Database Connection
   const MONGODB_URI = process.env.MONGODB_URI;
